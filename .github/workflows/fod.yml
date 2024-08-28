@@ -90,7 +90,7 @@ jobs:
           app_name_postfix: ${{ vars.FORTIFY_APP_NAME_POSTFIX }}
       - name: Node FoD OSS scan
         id: node-fod-oss-scan
-        uses: dguerreros/github-actions/node-fod-oss-scan@main
+        uses: edguerreros/github-actions/node-fod-oss-scan@main
         with:
           working_directory: ${{ env.BASE_DIR }}
           fod_url: ${{ vars.FOD_URL }}
@@ -123,14 +123,14 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
       - name: Fortify App and Release Name
         id: fortify-app-and-rel-name
-        uses: dguerreros/github-actions/fortify-app-and-release-name@main
+        uses: edguerreros/github-actions/fortify-app-and-release-name@main
         with:
           default_fortify_app_name: ${{ env.DEFAULT_APP_NAME }}
           default_fortify_release_name: ${{ env.DEFAULT_VERSION_NAME }}
           app_name_postfix: ${{ vars.FORTIFY_APP_NAME_POSTFIX }}
       - name: Node FoD SAST scan
         id: node-fod-sast-scan
-        uses: dguerreros/github-actions/node-fod-sast-scan@main
+        uses: edguerreros/github-actions/node-fod-sast-scan@main
         with:
           working_directory: ${{ env.BASE_DIR }}
           fod_url: ${{ vars.FOD_URL }}
@@ -148,7 +148,7 @@ jobs:
         uses: actions/checkout@v3.3.0
       - name: Fortify App and Release Name
         id: fortify-app-and-rel-name
-        uses: dguerreros/github-actions/fortify-app-and-release-name@main
+        uses: edguerreros/github-actions/fortify-app-and-release-name@main
         with:
           default_fortify_app_name: ${{ env.DEFAULT_APP_NAME }}
           default_fortify_release_name: ${{ env.DEFAULT_VERSION_NAME }}
