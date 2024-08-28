@@ -50,6 +50,7 @@ on:
 # Global environment variables
 env:
   DEFAULT_APP_NAME: "EG_IWANodeJS_GH"
+  DEFAULT_VERSION_NAME: "master"
 
 jobs:
 
@@ -85,7 +86,7 @@ jobs:
         uses: ./.github/actions/fortify-app-and-release-name
         with:
           default_fortify_app_name: ${{ env.DEFAULT_APP_NAME }}
-          default_fortify_release_name: ${{ github.ref_name }}
+          default_fortify_release_name: ${{ env.DEFAULT_VERSION_NAME }}
           app_name_postfix: ${{ vars.FORTIFY_APP_NAME_POSTFIX }}
       - name: Node FoD OSS scan
         id: node-fod-oss-scan
