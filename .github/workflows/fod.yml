@@ -171,7 +171,7 @@ jobs:
           default_fortify_release_name: ${{ env.DEFAULT_VERSION_NAME }}
           app_name_postfix: ${{ vars.FORTIFY_APP_NAME_POSTFIX }}
       - name: Verify FoD Security Policy
-        uses: edguerreros/github/actions/verify-fod-security-policy@main
+        uses: edguerreros/github-actions/verify-fod-security-policy@main
         with:
           fod_api_url: ${{ vars.FOD_API_URL }}
           fod_client_id: ${{ secrets.FOD_CLIENT_ID }}
